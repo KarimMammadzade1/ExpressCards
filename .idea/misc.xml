@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.14879302978515627" />
+        <entry key="../../.gradle/caches/transforms-3/136d0d9157038a1703e7a4e1058d8e78/transformed/appcompat-1.4.2/res/layout/support_simple_spinner_dropdown_item.xml" value="0.14322916666666666" />
+        <entry key="../../Library/Android/sdk/platforms/android-32/data/res/drawable/list_selector_background.xml" value="0.1075" />
+        <entry key="app/src/main/res/drawable/roundedbg.xml" value="0.1075" />
+        <entry key="app/src/main/res/drawable/sheet_view_back.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3861012776692708" />
+        <entry key="app/src/main/res/layout/card_dropdown.xml" value="0.2758152173913043" />
+        <entry key="app/src/main/res/layout/cardsbottomsheet.xml" value="0.2115036231884058" />
+        <entry key="app/src/main/res/layout/custom_cardview_holder_layout.xml" value="0.2879379272460938" />
+        <entry key="app/src/main/res/layout/custom_spinnerlayout.xml" value="0.2596389770507813" />
+        <entry key="app/src/main/res/layout/fragment_cards_bottom.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.31341705322265634" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

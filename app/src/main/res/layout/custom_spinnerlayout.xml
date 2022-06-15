@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="4dp"
+    android:background="#F5F5F5"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:padding="4dp"
+        android:weightSum="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:padding="16dp"
+            android:layout_height="100dp"
+            android:layout_weight="0.4"
+        >
+
+            <Spinner
+                android:id="@+id/spinnerYear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundedbg"
+                android:pointerIcon="none" />
+
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/dropdownarrow"
+             />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_weight="0.6"
+            android:layout_width="0dp"
+            android:layout_height="100dp">
+
+            <Spinner
+                android:pointerIcon="none"
+                android:id="@+id/spinnerMonth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/roundedbg"/>
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+
+                android:id="@+id/dropdownArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/dropdownarrow"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+
