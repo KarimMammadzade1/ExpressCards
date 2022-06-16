@@ -146,33 +146,46 @@ public class CustomTry extends androidx.appcompat.widget.AppCompatImageView {
     public boolean performClick() {
         return super.performClick();
     }
-    //    @RequiresApi(api = Build.VERSION_CODES.M)
-//    @Override
-//    public boolean onTouch(View v,MotionEvent event){
-//        final Bitmap bitmap = ((BitmapDrawable)this.getDrawable()).getBitmap();
-//        int x = (int)event.getX();
-//        int y = (int)event.getY();
-//        int pixel = bitmap.getPixel(x,y);
+// extension function for detecting clicked section
 //
+//    fun checkClickedCategory(event: MotionEvent, wheelSpinCu: CustomTry): kotlin.String {
+//        val evX = event.x
+//        val evY = event.y
 //
-//        int red = Color.red(pixel);
-//        int blue = Color.blue(pixel);
-//        int green = Color.green(pixel);
+//        val image = wheelSpinCu
+//        image.isDrawingCacheEnabled = true
+//        val imgBtmp = Bitmap.createBitmap(image.drawingCache!!)
+//        image.isDrawingCacheEnabled = false
+//        val pixel = imgBtmp.getPixel(evX.toInt(), evY.toInt())
+//        val redComponent = Color.red(pixel)
+//        val greenComponent = Color.green(pixel)
+//        val blueComponent = Color.blue(pixel)
 //
-//       // int pixel = Color.RED; //bmp.getPixel(n.x, n.y);
-//        int a = Color.alpha(pixel);
-//        int r = Color.red(pixel);
-//        int g = Color.green(pixel);
-//        int b = Color.blue(pixel);
+//        val hex = String.format("#%02x%02x%02x", redComponent, greenComponent, blueComponent)
+//        when (hex.lowercase()) {
+//            WheelSectionColors.GREENSECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.GREENSECTION.name
+//            }
+//            WheelSectionColors.YELLOWSECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.YELLOWSECTION.name
+//            }
+//            WheelSectionColors.BLUESECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.BLUESECTION.name
+//            }
+//            WheelSectionColors.LIGHTBLUESECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.LIGHTBLUESECTION.name
+//            }
+//            WheelSectionColors.ORANGESECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.ORANGESECTION.name
+//            }
+//            WheelSectionColors.PINKSECTION.rgbColor.lowercase() -> {
+//                return WheelSectionColors.PINKSECTION.name
+//            }
 //
-//        String color = String.format("#%02X%02X%02X%02X", a, r, g, b);
-//        Log.e("testtag", "onTouch : "+color );
+//        else -> { return ""}
+//        }
 //
-//
-//
-//        return false;
 //    }
-
 
 }
 
