@@ -32,7 +32,7 @@ import com.rteam.expresscards.R;
  * created by Karim Mammadzada 01.05.22
  * Casino Wheel V1.
  */
-public class CustomTry extends View implements View.OnTouchListener {
+public class CustomTry extends androidx.appcompat.widget.AppCompatImageView {
 
     //private float mBearing;
     private Paint mCirclePaint;
@@ -88,7 +88,7 @@ public class CustomTry extends View implements View.OnTouchListener {
 
     private void initLuckyWheel() {
         setFocusable(true);
-        setOnTouchListener(this);
+      //  setOnTouchListener(this);
         mCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCirclePaint.setColor(ContextCompat.getColor(getContext(), android.R.color.white));
         mCirclePaint.setStrokeWidth(9);
@@ -120,7 +120,7 @@ public class CustomTry extends View implements View.OnTouchListener {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Log.d("AAAAAAAAAAAAAAAAAA", "from onDraw");
+
         if (mRadius == 0) {
             calculateCircleParams();
         }
@@ -141,22 +141,37 @@ public class CustomTry extends View implements View.OnTouchListener {
         }
 
     }
-    @RequiresApi(api = Build.VERSION_CODES.M)
+
     @Override
-    public boolean onTouch(View v,MotionEvent event){
-       float viewX= v.getX();
-        float viewY=v.getY();
-        float eventX=event.getX();
-        float eventY=event.getY();
-        Log.e("test viewx",Float.toString(viewX));
-        Log.e("test viewy",Float.toString(viewY));
-        Log.e("test eventx",Float.toString(eventX));
-        Log.e("test eventy",Float.toString(eventY));
-
-
-
-        return false;
+    public boolean performClick() {
+        return super.performClick();
     }
+    //    @RequiresApi(api = Build.VERSION_CODES.M)
+//    @Override
+//    public boolean onTouch(View v,MotionEvent event){
+//        final Bitmap bitmap = ((BitmapDrawable)this.getDrawable()).getBitmap();
+//        int x = (int)event.getX();
+//        int y = (int)event.getY();
+//        int pixel = bitmap.getPixel(x,y);
+//
+//
+//        int red = Color.red(pixel);
+//        int blue = Color.blue(pixel);
+//        int green = Color.green(pixel);
+//
+//       // int pixel = Color.RED; //bmp.getPixel(n.x, n.y);
+//        int a = Color.alpha(pixel);
+//        int r = Color.red(pixel);
+//        int g = Color.green(pixel);
+//        int b = Color.blue(pixel);
+//
+//        String color = String.format("#%02X%02X%02X%02X", a, r, g, b);
+//        Log.e("testtag", "onTouch : "+color );
+//
+//
+//
+//        return false;
+//    }
 
 
 }

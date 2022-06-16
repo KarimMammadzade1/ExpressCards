@@ -123,6 +123,7 @@
             <com.rteam.expresscards.customview.CustomTry
                 android:layout_centerInParent="true"
                 android:layout_width="match_parent"
+                android:id="@+id/wheelSpin"
                 android:layout_height="match_parent"/>
         </RelativeLayout>
         <TextView

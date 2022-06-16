@@ -29,7 +29,7 @@ object MockDatas {
         CategoriesDataModel(CategoryTypes.REPAIR,"Repair","33","433",R.drawable.repairicon,"#55BCA6"),
         CategoriesDataModel(CategoryTypes.ENTERTAINTMENT,"Entertainment","24","43",R.drawable.entertainmentico,"#FAA61A"),
         CategoriesDataModel(CategoryTypes.HEALTH,"Health","24","232",R.drawable.healthicon,"#FF001F"),
-        CategoriesDataModel(CategoryTypes.OTHERSERVICES,"Other Servuces","43","333",R.drawable.otherservicesicon,"#5E6DBA"),
+        CategoriesDataModel(CategoryTypes.OTHERSERVICES,"Other Services","43","333",R.drawable.otherservicesicon,"#5E6DBA"),
 
 
     )

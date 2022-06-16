@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
 
+
+
+
         val configuration = AppBarConfiguration(navController.graph)
         toolbar.setupWithNavController(navController,configuration )
 

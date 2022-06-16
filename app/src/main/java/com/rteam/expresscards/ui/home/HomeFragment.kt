@@ -1,27 +1,25 @@
 package com.rteam.expresscards.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rteam.expresscards.R
 import com.rteam.expresscards.base.BaseFragment
 import com.rteam.expresscards.customview.CustomCardViewHolder
 import com.rteam.expresscards.customview.CustomSpinner
-
+import com.rteam.expresscards.customview.CustomTry
 import com.rteam.expresscards.ui.bottomsheet.CardsBottomFragment
 import com.rteam.expresscards.utils.MockDatas
-import kotlinx.android.synthetic.main.activity_main.*
+import com.rteam.expresscards.utils.checkClickedCategory
 
 class HomeFragment : BaseFragment() {
-private val customCardViewHolder get() = view?.findViewById<CustomCardViewHolder>(R.id.customCardHolder)
-private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.customSpinners)
-
+    private val customCardViewHolder get() = view?.findViewById<CustomCardViewHolder>(R.id.customCardHolder)
+    private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.customSpinners)
+    private val wheelSpinCu get() = view?.findViewById<CustomTry>(R.id.wheelSpin)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,9 +42,29 @@ private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.custom
         customSpinners?.monthOnClickListener = {
             Toast.makeText(requireContext(), "Month here $it", Toast.LENGTH_SHORT).show()
         }
-        customCardViewHolder?.setOnClickListener { openBottomSheet()}
+        customCardViewHolder?.setOnClickListener { openBottomSheet() }
+        setUpCategoriesRecyler()
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.categoriesRV)
+        wheelSpinCu?.setOnTouchListener { v, event ->
+            Toast.makeText(requireContext(),checkClickedCategory(event, wheelSpinCu!!), Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(),"Sections are detectable! Dont Have time to implement rest :(", Toast.LENGTH_SHORT).show()
+            false
+        }
+
+        //  }
+
+
+
+
+
+
+
+
+
+    }
+
+    private fun setUpCategoriesRecyler() {
+         val recyclerView = view?.findViewById<RecyclerView>(R.id.categoriesRV)
         recyclerView?.layoutManager= LinearLayoutManager(requireContext())
         val adapter = CategoriesRecyclerAdapter(MockDatas.categoriesListMock)
         recyclerView?.adapter=adapter
