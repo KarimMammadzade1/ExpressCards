@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.rteam.expresscards.R
 import com.rteam.expresscards.base.BaseFragment
 import com.rteam.expresscards.customview.CustomCardViewHolder
 import com.rteam.expresscards.customview.CustomSpinner
 
 import com.rteam.expresscards.ui.bottomsheet.CardsBottomFragment
+import com.rteam.expresscards.utils.MockDatas
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HomeFragment : BaseFragment() {
@@ -43,7 +46,10 @@ private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.custom
         }
         customCardViewHolder?.setOnClickListener { openBottomSheet()}
 
-
+        val recyclerView = view.findViewById<RecyclerView>(R.id.categoriesRV)
+        recyclerView?.layoutManager= LinearLayoutManager(requireContext())
+        val adapter = CategoriesRecyclerAdapter(MockDatas.categoriesListMock)
+        recyclerView?.adapter=adapter
     }
 
     private fun openBottomSheet() {

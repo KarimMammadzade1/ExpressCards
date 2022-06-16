@@ -2,24 +2,44 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <RelativeLayout
+    android:id="@+id/imageContainer"
     android:layout_width="50dp"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     android:layout_height="50dp">
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:progress="75"
+        app:trackThickness="3dp"
+        android:indeterminateTint="@color/black"
+        android:id="@+id/categoryOutlineBorder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <ImageView
-        android:padding="16dp"
-        android:src="@drawable/hotelmotelicon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</RelativeLayout>
 
+    <ImageView
+        android:id="@+id/categoryImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:src="@drawable/hotelmotelicon" />
+</RelativeLayout>
+    <TextView
+        android:layout_marginStart="12dp"
+        android:id="@+id/categoriesNameTextRV"
+        style="@style/cardnamestyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Airlines"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageContainer"
+        app:layout_constraintTop_toTopOf="parent" />
     <TextView
         android:id="@+id/categoriesPercentText"
         style="@style/cardpanstyle"

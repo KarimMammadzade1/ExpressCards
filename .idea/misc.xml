@@ -13,11 +13,11 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3861012776692708" />
         <entry key="app/src/main/res/layout/card_dropdown.xml" value="0.2758152173913043" />
         <entry key="app/src/main/res/layout/cardsbottomsheet.xml" value="0.2115036231884058" />
-        <entry key="app/src/main/res/layout/categoriesitem.xml" value="0.36920529801324503" />
+        <entry key="app/src/main/res/layout/categoriesitem.xml" value="0.4957784791655888" />
         <entry key="app/src/main/res/layout/custom_cardview_holder_layout.xml" value="0.2879379272460938" />
         <entry key="app/src/main/res/layout/custom_spinnerlayout.xml" value="0.2596389770507813" />
         <entry key="app/src/main/res/layout/fragment_cards_bottom.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.11482086181640626" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16027374267578126" />
       </map>
     </option>
   </component>
