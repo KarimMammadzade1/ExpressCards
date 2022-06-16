@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         toolbar.setNavigationIcon(R.drawable.backiconlast)
 
         toolbar.setNavigationOnClickListener {
-            finish()
+            if (navController.currentDestination?.id ==R.id.homeFragment )
+                 finish()
         }
         setSupportActionBar(toolbar)
        // supportActionBar?.setDisplayShowTitleEnabled(true)

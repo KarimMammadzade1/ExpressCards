@@ -11,20 +11,142 @@
         android:id="@+id/customCardHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/roundedbg"
         android:layout_margin="16dp"
+        android:background="@drawable/roundedbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <com.rteam.expresscards.customview.CustomSpinner
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/customCardHolder"
         android:id="@+id/customSpinners"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customCardHolder" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/customSpinners"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/homeMoneyDataContainer"
+        android:background="@drawable/homecontainerbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+           android:padding="12dp"
+            android:id="@+id/moneyDetailsContainer"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_height="70dp">
+        <LinearLayout
+            android:id="@+id/expencesContainer"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
 
+            android:layout_height="match_parent">
+            <TextView
+                style="@style/carddetailsquantitytextstyle"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/expencesQuantity"
+                android:gravity="center_horizontal"
+                android:text="1 300 000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                style="@style/carddetailsquantitysubtextstyle"
+                android:id="@+id/expencesText"
+                android:text="Expences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/incomingsContainer"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    style="@style/carddetailsquantitytextstyle"
+                    android:id="@+id/incomingsQuantity"
+                    android:text="1 700 000"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/incomingsText"
+                    android:text="Incomings"
+
+                    style="@style/carddetailsquantitysubtextstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/cashBackContainer"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/cashbackQuantity"
+                    android:text="100 500"
+                    style="@style/carddetailsquantitytextstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/cashbackText"
+                    android:text="Cashback"
+                    style="@style/carddetailsquantitysubtextstyle"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            app:layout_constraintTop_toBottomOf="@id/moneyDetailsContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:id="@+id/wheelContainer"
+            app:layout_constraintHeight_percent="0.57"
+            android:layout_height="0dp">
+            <com.rteam.expresscards.customview.CustomTry
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_marginStart="16dp"
+            android:text="Categories"
+            android:id="@+id/categoriesText"
+            style="@style/cardpanstyle"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wheelContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="categoriesRV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoriesText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/categoriesitem"
+            tools:itemCount="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

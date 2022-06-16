@@ -33,8 +33,7 @@ private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.custom
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        requireActivity().actionBar?.title = findNavController().currentDestination?.label
-//        requireActivity().toolbar.title =  findNavController().currentDestination?.label
+
 
         customSpinners?.yearOnClickListener = {
             Toast.makeText(requireContext(), "Year here $it", Toast.LENGTH_SHORT).show()

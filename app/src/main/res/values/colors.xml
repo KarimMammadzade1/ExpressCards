@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="greensection">#5AC461</color>
+    <color name="bluesection">#3255F4</color>
+    <color name="lightbluesection">#50B5D0</color>
+    <color name="pinksection">#E1325A</color>
+    <color name="yellowsection">#FAA61A</color>
+    <color name="orangesection">#F58220</color>
+
+
 </resources>
