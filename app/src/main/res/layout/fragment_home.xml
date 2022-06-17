@@ -126,6 +126,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true" />
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text = "Transport 26%"
+                    style="@style/laststyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text = "1 500"
+                    style="@style/carddetailsquantitytextstyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text = "AZN / month"
+                    style="@style/laststyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text = "View statement"
+                    android:layout_width="wrap_content"
+                    style="@style/laststyle"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
         </RelativeLayout>
         <TextView
             android:layout_marginStart="16dp"

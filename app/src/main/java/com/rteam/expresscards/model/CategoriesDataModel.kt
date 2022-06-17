@@ -9,5 +9,7 @@ data class CategoriesDataModel(
     val percent:String,
     val totalSumm:String,
     val icon: Int,
-    val cornerColor:String
+    val cornerColor:Int,
+    val categoryHistory:List<HistoryItem>
 )
+data class HistoryItem(val mainContentName:String,val transactionTime:String,val trabsactionDate:String,val transactionCurreny:String)

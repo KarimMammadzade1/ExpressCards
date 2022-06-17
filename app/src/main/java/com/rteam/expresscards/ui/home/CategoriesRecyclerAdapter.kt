@@ -1,22 +1,25 @@
 package com.rteam.expresscards.ui.home
 
+import android.annotation.SuppressLint
 import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.rteam.expresscards.R
 import com.rteam.expresscards.appContext
+import com.rteam.expresscards.model.CardViewDataModel
 import com.rteam.expresscards.model.CategoriesDataModel
 import com.rteam.expresscards.ui.bottomsheet.BottomCardsRecyclerAdapter
 import org.koin.core.component.getScopeId
 import java.util.*
 
-class CategoriesRecyclerAdapter(val categoriesList:List<CategoriesDataModel>): RecyclerView.Adapter<CategoriesRecyclerAdapter.ViewHolder>() {
+class CategoriesRecyclerAdapter(val categoriesList:List<CategoriesDataModel>,val clickListener:CategoryClick): RecyclerView.Adapter<CategoriesRecyclerAdapter.ViewHolder>() {
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val categoryName:TextView = itemView.findViewById(R.id.categoriesNameTextRV)
         val categoryPercent:TextView = itemView.findViewById(R.id.categoriesPercentText)
@@ -38,8 +41,18 @@ class CategoriesRecyclerAdapter(val categoriesList:List<CategoriesDataModel>): R
        holder.categoryName.text = categoriesList[position].categoryName
        holder.categoryPercent.text = "${categoriesList[position].percent} %"
        holder.categoryImage.setImageResource(categoriesList[position].icon)
+       holder.categoryOutlineBorder.isIndeterminate=false
+       holder.categoryOutlineBorder.progress = 75
+       holder.categoryOutlineBorder.setIndicatorColor(appContext?.resources?.getColor(categoriesList[position].cornerColor)!!)
+        holder.itemView.rootView.setOnClickListener {
+            clickListener.onClick(categoriesList[position])
+        }
 
     }
 
     override fun getItemCount(): Int = categoriesList.size
+
+    class CategoryClick(val clickListener: (model: CategoriesDataModel) -> Unit) {
+        fun onClick(model: CategoriesDataModel) = clickListener(model)
+    }
 }

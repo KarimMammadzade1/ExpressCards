@@ -15,5 +15,19 @@
     <color name="yellowsection">#FAA61A</color>
     <color name="orangesection">#F58220</color>
 
+    <color name="airlinesborder">#4BAFF8</color>
+    <color name="rentecarborder">#9B2FF5</color>
+    <color name="hotelmotelborder">#5723E1</color>
+    <color name="transportborder">#C3291C</color>
+    <color name="carsborder">#3255F4</color>
+    <color name="governmentborder">#9D8980</color>
+    <color name="personalborder">#50B5D0</color>
+    <color name="businessborder">#212121</color>
+    <color name="clothingborder">#E1325A</color>
+    <color name="repairsborder">#55BCA6</color>
+    <color name="entertainmentborder">#FAA61A</color>
+    <color name="healthborder">#FF001F</color>
+    <color name="otherservicesborder">#5E6DBA</color>
+
 
 </resources>

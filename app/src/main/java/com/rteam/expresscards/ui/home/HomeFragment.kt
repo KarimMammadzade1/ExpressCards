@@ -16,7 +16,9 @@ import com.rteam.expresscards.base.BaseFragment
 import com.rteam.expresscards.customview.CustomCardViewHolder
 import com.rteam.expresscards.customview.CustomSpinner
 import com.rteam.expresscards.customview.CustomTry
+import com.rteam.expresscards.model.CategoriesDataModel
 import com.rteam.expresscards.ui.bottomsheet.CardsBottomFragment
+import com.rteam.expresscards.ui.bottomsheet.CategoryDetailsBottomFragment
 import com.rteam.expresscards.utils.MockDatas
 import com.rteam.expresscards.utils.checkClickedCategory
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -26,6 +28,8 @@ class HomeFragment : BaseFragment() {
     private val customCardViewHolder get() = view?.findViewById<CustomCardViewHolder>(R.id.customCardHolder)
     private val customSpinners get() = view?.findViewById<CustomSpinner>(R.id.customSpinners)
     private val wheelSpinCu get() = view?.findViewById<CustomTry>(R.id.wheelSpin)
+    private var selectedYear:Int?=null
+    private var selectedMonth:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,10 +47,12 @@ class HomeFragment : BaseFragment() {
 
 
         customSpinners?.yearOnClickListener = {
-            Toast.makeText(requireContext(), "Year here $it", Toast.LENGTH_SHORT).show()
+            selectedYear = it
+           // Toast.makeText(requireContext(), "Year here $it", Toast.LENGTH_SHORT).show()
         }
         customSpinners?.monthOnClickListener = {
-            Toast.makeText(requireContext(), "Month here $it", Toast.LENGTH_SHORT).show()
+            selectedMonth = it
+           // Toast.makeText(requireContext(), "Month here $it", Toast.LENGTH_SHORT).show()
         }
         customCardViewHolder?.setOnClickListener { openBottomSheet() }
         setUpCategoriesRecyler()
@@ -58,7 +64,7 @@ class HomeFragment : BaseFragment() {
     private fun setUpSectionWheelClickListener() {
         wheelSpinCu?.setOnTouchListener { v, event ->
             Toast.makeText(requireContext(),checkClickedCategory(event, wheelSpinCu!!), Toast.LENGTH_SHORT).show()
-            Toast.makeText(requireContext(),"Sections are detectable! Dont Have time to implement rest :(", Toast.LENGTH_SHORT).show()
+           // Toast.makeText(requireContext(),"Sections are detectable! Dont Have time to implement rest :(", Toast.LENGTH_SHORT).show()
             false
         }
     }
@@ -66,7 +72,9 @@ class HomeFragment : BaseFragment() {
     private fun setUpCategoriesRecyler() {
          val recyclerView = view?.findViewById<RecyclerView>(R.id.categoriesRV)
         recyclerView?.layoutManager= LinearLayoutManager(requireContext())
-        val adapter = CategoriesRecyclerAdapter(MockDatas.categoriesListMock)
+        val adapter = CategoriesRecyclerAdapter(MockDatas.categoriesListMock,CategoriesRecyclerAdapter.CategoryClick{
+            openCategoryDetails(it)
+        })
         recyclerView?.adapter=adapter
         val animationDown: Animation = AnimationUtils.loadAnimation(requireContext(),R.anim.scaledownanim)
         animationDown.setAnimationListener(object:Animation.AnimationListener{
@@ -124,6 +132,11 @@ class HomeFragment : BaseFragment() {
                 }
             }
         })
+    }
+
+    private fun openCategoryDetails(model: CategoriesDataModel) {
+        val bottomSheet = CategoryDetailsBottomFragment(model,selectedYear!!,selectedMonth!!)
+        bottomSheet.show(childFragmentManager, bottomSheet.tag)
     }
 
     private fun openBottomSheet() {

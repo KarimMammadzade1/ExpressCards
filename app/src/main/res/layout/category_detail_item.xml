@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/detailRootView"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<ImageView
+    android:id="@+id/catDetailImage"
+    android:layout_marginStart="12dp"
+    android:padding="4dp"
+    android:layout_marginTop="12dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:src="@drawable/ubericon"
+    android:layout_width="50dp"
+    android:layout_height="50dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/catDetailImage"
+        app:layout_constraintBottom_toBottomOf="@id/catDetailImage"
+        app:layout_constraintStart_toEndOf="@id/catDetailImage"
+        android:layout_width="0dp"
+        android:weightSum="2"
+        android:id="@+id/container"
+        app:layout_constraintWidth_percent="0.6"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_weight="1"
+            android:text="Uber trip 20 aw"
+            android:layout_marginStart="16dp"
+            style="@style/catDetailHeaderTextStyle"
+            android:id="@+id/mainContentDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+android:layout_marginStart="16dp"
+                android:text="13:02"
+                style="@style/catDetailTextStyle"
+                android:id="@+id/detailTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginStart="16dp"
+                android:text="17.08.2020"
+                style="@style/catDetailTextStyle"
+                android:id="@+id/detailDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        app:layout_constraintTop_toTopOf="@id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/quantity"
+        android:text="100 AZN"
+        style="@style/catDetailHeaderTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        app:layout_constraintTop_toBottomOf="@id/container"
+        app:layout_constraintStart_toStartOf="@id/container"
+        app:layout_constraintEnd_toStartOf="@id/quantity"
+        android:id="@+id/bottomDividier"
+        android:background="#DADADA"
+        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="2dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

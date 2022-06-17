@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
+    android:background="?android:attr/selectableItemBackground"
     android:paddingTop="4dp"
     android:paddingBottom="4dp"
     android:layout_width="match_parent"
@@ -15,9 +16,12 @@
     app:layout_constraintStart_toStartOf="parent"
     android:layout_height="50dp">
     <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:progress="75"
+        android:progress="50"
         app:trackThickness="3dp"
-        android:indeterminateTint="@color/black"
+        app:indicatorColor="@color/black"
+        android:indeterminate="false"
+        android:indeterminateOnly="false"
+
         android:id="@+id/categoryOutlineBorder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
